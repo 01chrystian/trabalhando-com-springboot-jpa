@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 import com.educandoweb.course.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_order")
@@ -31,7 +31,7 @@ public class Order implements Serializable {
 	private Integer orderStatus;
 
 	@ManyToOne
-	@JsonManagedReference
+	@JsonIgnore
 	@JoinColumn(name = "client_id")
 	private User client;
 

@@ -28,7 +28,6 @@ public class User implements Serializable {
 	private String password;
 
 	@OneToMany(mappedBy = "client")
-	@JsonBackReference
 	private List<Order> orders = new ArrayList<>();
 
 	public User() {
